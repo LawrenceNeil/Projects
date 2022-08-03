@@ -19,6 +19,9 @@
     position: relative;
     color: #fff;
 }
+.menu-close{
+    display: none;
+}
 .list li{
     list-style: none;
 }
@@ -35,7 +38,7 @@
     background-color: transparent;
     color: #fff;
     cursor: pointer;
-    transition: 0.5s;
+
 }
 .close:hover{
     transform: translateY(-5px);
@@ -50,7 +53,6 @@
     z-index: 2;
     transition: 0.9 ease;
     display: none;
-
     
 }
 .nav-bar h1{
@@ -63,6 +65,13 @@
     cursor: pointer;
     transition: 0.5s;
 }
+.icon-menu{
+    width: 45px;
+    padding:5px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: none;
+}
 .icon-cart:hover{
     transform: translateY(-3px);
 }
@@ -74,6 +83,7 @@
     align-items: center;
     padding-top: 20px;
     justify-content: space-between;
+    position: relative;
 }
 .nav-bar ul{
     display: flex;
@@ -223,3 +233,82 @@
     border-radius: 5px;
     font-size: 18px;
 }
+
+@media(max-width: 700px){
+    .nav-list li{
+        display: none;
+    }
+    .nav-list{
+        flex-direction: column;
+    }
+    .cart{
+        width: 50%;
+
+    }
+    .icon-cart{
+        margin-right: -150px;
+    }
+    .icon-menu{
+        display: block;
+    }
+    .nav-list li{
+        display: block;
+
+    }
+    .nav-list ul{
+        display: block;
+        padding: 20px;
+        margin-right: -100px;
+        width: 40%;
+        height: 100vh;
+        background-color: rgba(185, 112, 16, 0.884);
+        position: absolute;
+        top:0;
+        right: 0;
+        display: none;
+    }
+    .nav-list ul li{
+        margin-top: 20px;
+        padding: 5px;
+        margin-bottom: 25px;
+        width: 170px;
+
+    }
+    .nav-list ul li a{
+        padding-right: 20px;
+    }
+    .menu-close{
+        display: block;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 4px;
+        transition: 0.5s;
+    }
+    .menu-close:hover{
+        transform: translateY(-5px);
+    }
+    .content h1{
+        font-size: 25px;
+    }
+    .content  p{
+        font-size: 15px;
+    }
+    .side-dishes{
+        flex-direction: column;
+    }
+    .card-menu{
+        width: 400px;
+        height: 500px;
+    }
+    .card-menu img{
+        width: 350px;
+        height: 300px;
+    }
+    .card-menu h1{
+        font-size: 30px;
+    }
+    .price p{
+        font-size: 20px;
+    }
+}
+

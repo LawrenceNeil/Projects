@@ -29,7 +29,9 @@
         <div class="nav-bar">
             <h1>LOGO</h1> 
             <div class="nav-list">
+                
                 <ul>
+                    <li><button class="menu-close">CLOSE</button></li>
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#menu">MENU</a></li>
                     <li><a href="#">ABOUT US</a></li>
@@ -37,6 +39,7 @@
                 </ul>
             </div>
             <img src="media/cart.jpg" id="btn-cart" class="icon-cart">
+            <img src="media/menu.png" id="btn-menu" class="icon-menu">
         </div>
         <div class="content">
             <h1>WELCOME TO ALAB RESTAURANT</h1>
@@ -196,12 +199,20 @@
     <script>
         $(document).ready(function(){
           $("#btn-cart").click(function(){
-            $("#cartt").show();
+            $("#cartt").show(300);
           });
 
           $("#btn-close").click(function(){
-            $("#cartt").hide();
+            $("#cartt").hide(300);
           });
+
+          $("#btn-menu").click(function(){
+            $(".nav-list ul").show(300);
+          });
+          $(".menu-close").click(function(){
+            $(".nav-list ul").hide(300);
+          });
+
         });
     </script>
 
