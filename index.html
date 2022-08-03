@@ -8,19 +8,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <title>Restaurant</title>
 </head>
 <body>
     <div class="home" id="home">
+        <div class="cart" id="cartt">
+            <div class="info">
+                <h1>ORDER</h1>
+                <div class="list">
+                    <ul>
+                        <li><p>SUPER BBQ</p></li>
+                        <li><p>ICE TEA</p></li>
+                    </ul>
+                </div>
+                <button class="close" id="btn-close">CLOSE</button>
+            </div>
+        </div>
         <div class="nav-bar">
             <h1>LOGO</h1> 
             <div class="nav-list">
                 <ul>
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#menu">MENU</a></li>
-                    <li><a href="#">DRINKS</a></li>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#"><img src="media/cart.jpg" id="btn-cart"></a></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +46,8 @@
     </div>
 
     <div class="menu" id="menu">
-        <h1>Menu</h1>
+        <h1 class="text-head">Menu</h1>
+        <h1><span>Side Dishes</span></h1>
         <div class="side-dishes">
             <div class="card-menu">
                 <img src="media/bbq1.webp">
@@ -118,6 +133,54 @@
             <div class="card-menu">
                 <img src="media/bbq4.webp">
                 <h1>Super BBQ</h1>
+                <p>Lorem ipsum dolor sit amet. <br>
+                Quo laborum repellat id minima.</p>
+                <div class="price">
+                    <p>₱ 300.00</p>
+                    <input type="number" name="bbq1">
+                    <button class="order">ORDER</button>
+                </div>
+            </div>
+
+        </div>
+        <h1 class="text-drinks">DRINKS</h1>
+        <div class="side-dishes">
+            <div class="card-menu">
+                <img src="media/drinks1.webp">
+                <h1>ICE TEA</h1>
+                <p>Lorem ipsum dolor sit amet. <br>
+                Quo laborum repellat id minima.</p>
+                <div class="price">
+                    <p>₱ 300.00</p>
+                    <input type="number" name="bbq1">
+                    <button class="order">ORDER</button>
+                </div>
+            </div>
+            <div class="card-menu">
+                <img src="media/drinks2.webp">
+                <h1>COKE</h1>
+                <p>Lorem ipsum dolor sit amet. <br>
+                Quo laborum repellat id minima.</p>
+                <div class="price">
+                    <p>₱ 300.00</p>
+                    <input type="number" name="bbq1">
+                    <button class="order">ORDER</button>
+                </div>
+            </div>
+            <div class="card-menu">
+                <img src="media/drinks3.webp">
+                <h1>ORANGE</h1>
+                <p>Lorem ipsum dolor sit amet. <br>
+                Quo laborum repellat id minima.</p>
+                <div class="price">
+                    <p>₱ 300.00</p>
+                    <input type="number" name="bbq1">
+                    <button class="order">ORDER</button>
+                </div>
+            </div>
+            <div class="card-menu">
+                <img src="media/drinks4.webp">
+                <h1>AVOCADO SHAKE</h1>
                 <p>Lorem ipsum dolor sit amet. <br>
                 Quo laborum repellat id minima.</p>
                 <div class="price">
@@ -130,7 +193,17 @@
         </div>
 
     </div>
+    <script>
+        $(document).ready(function(){
+          $("#btn-cart").click(function(){
+            $("#cartt").show();
+          });
 
+          $("#btn-close").click(function(){
+            $("#cartt").hide();
+          });
+        });
+    </script>
 
 </body>
 </html>

@@ -5,15 +5,57 @@
     font-family: 'Poppins', sans-serif;
   }
 .home{
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
     background-image: linear-gradient(#5a40196e,#0c0707b0),url(media/bg.webp);
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+.info{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    color: #fff;
+}
+.list li{
+    list-style: none;
+}
+.list{
+    padding: 20px;
+}
+.close{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+}
+.close:hover{
+    transform: translateY(-5px);
+}
+.cart{
+    transition: 0.5s;
+    width: 30%;
+    height: 100vh;
+    background-color: rgba(185, 112, 16, 0.76);
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 2;
+    display: none;
 }
 .nav-bar h1{
     color: #fff;
     cursor: pointer;
+}
+.nav-list img{
+    width: 30px;
 }
 .nav-bar{
     width: 80%;
@@ -89,8 +131,15 @@
 
 
 
-
-
+.menu span{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.text-head{
+    margin-bottom:20px ;
+}
 .menu{
     width: 80%;
     margin: auto;
@@ -155,4 +204,13 @@
 }
 .order:hover{
     background: linear-gradient(to bottom, #ffcc00a2 0%, #ff6600 100%);
+}
+.text-drinks{
+    width: 130px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
 }
