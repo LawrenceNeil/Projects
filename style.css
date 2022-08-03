@@ -19,6 +19,10 @@
     position: relative;
     color: #fff;
 }
+.logo{
+    width: 120px;
+    margin-top: 60px;
+}
 .menu-close{
     display: none;
 }
