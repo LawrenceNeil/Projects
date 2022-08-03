@@ -45,6 +45,9 @@
     bottom: 0;
     transition: 0.5s;
 }
-.nav-bar a:hover::after{
-    width: 60%;
+.nav-bar .nav-list a .active{
+    width: 100%;
+}
+.nav-bar a:hover::after,{
+    width: 100%;
 }
