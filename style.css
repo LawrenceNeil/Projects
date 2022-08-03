@@ -4,10 +4,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-.container{
+.home{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(#5a40196e,#0c0707b0),url(bg.webp);
+    background-image: linear-gradient(#5a40196e,#0c0707b0),url(media/bg.webp);
     background-size: cover;
     background-position: center;
 }
@@ -38,6 +38,7 @@
     padding: 20px;
     cursor: pointer;
     position: relative;
+
 }
 .nav-bar a:after{
     content:"";
@@ -72,14 +73,86 @@
 }
 .btn{
     border: 1px solid white;
-    padding: 15px 25px;
+    padding: 5px 25px;
     background: transparent;
     color: #fff;
     border-radius: 20px;
-    width: 150px;
+    width: 250px;
     margin-top: 20px;
     font-size: 20px;
+    transition: 0.5s;
 }
 .btn:hover{
-    background-color: #f5c21d;
+    transform: translateY(-5px);
+    background-color: rgba(255, 166, 0, 0.438);
+}
+
+
+
+
+
+.menu{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    padding-top: 50px;
+    transition: 0.5s;
+
+}
+.side-dishes{
+    display: flex;
+    align-items: center;
+}
+.card-menu{
+    margin-top: 20px;
+    width: 250px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+.card-menu img{
+    width: 190px;
+    height: 112px;
+    border-radius: 10px;
+}
+.card-menu h1{
+    font-size: 15px;
+    padding: 4px;
+}
+.card-menu p{
+    font-size: 12px;
+}
+.price{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+.price p{
+    margin-right: 10px;
+}
+.price input{
+    width: 40px;
+    margin-right: 5px;
+    text-align: center;
+
+}
+
+.order{
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 3px;
+    width: 60px;
+    border-radius: 4px;
+
+}
+.order:hover{
+    background: linear-gradient(to bottom, #ffcc00a2 0%, #ff6600 100%);
 }
