@@ -6,7 +6,7 @@
   }
 .home{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-image: linear-gradient(#5a40196e,#0c0707b0),url(media/bg.webp);
     background-size: cover;
     background-position: center;
@@ -25,12 +25,6 @@
 }
 .menu-close{
     display: none;
-}
-.list li{
-    list-style: none;
-}
-.list{
-    padding: 20px;
 }
 .close{
     position: absolute;
@@ -68,13 +62,6 @@
     padding:5px;
     cursor: pointer;
     transition: 0.5s;
-}
-.icon-menu{
-    width: 45px;
-    padding:5px;
-    cursor: pointer;
-    transition: 0.5s;
-    display: none;
 }
 .icon-cart:hover{
     transform: translateY(-3px);
@@ -167,7 +154,6 @@
 .menu{
     width: 80%;
     margin: auto;
-    height: 100vh;
     padding-top: 50px;
 
 }
@@ -239,80 +225,132 @@
 }
 
 @media(max-width: 700px){
-    .nav-list li{
-        display: none;
-    }
-    .nav-list{
-        flex-direction: column;
-    }
-    .cart{
-        width: 50%;
-
-    }
-    .icon-cart{
-        margin-right: -150px;
-    }
-    .icon-menu{
-        display: block;
-    }
-    .nav-list li{
-        display: block;
-
-    }
-    .nav-list ul{
-        display: block;
-        padding: 20px;
-        margin-right: -100px;
-        width: 40%;
-        height: 100vh;
-        background-color: rgba(185, 112, 16, 0.884);
-        position: absolute;
-        top:0;
-        right: 0;
-        display: none;
-    }
-    .nav-list ul li{
-        margin-top: 20px;
-        padding: 5px;
-        margin-bottom: 25px;
-        width: 170px;
-
-    }
-    .nav-list ul li a{
-        padding-right: 20px;
-    }
-    .menu-close{
-        display: block;
-        border: 1px solid white;
-        padding: 10px;
-        border-radius: 4px;
-        transition: 0.5s;
-    }
-    .menu-close:hover{
-        transform: translateY(-5px);
-    }
     .content h1{
-        font-size: 25px;
-    }
-    .content  p{
         font-size: 15px;
+        font-weight: 800;
+    }
+    .content p{
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .btn{
+        font-size: 15px;
+        padding: 5px;
+        width: 150px;
     }
     .side-dishes{
-        flex-direction: column;
+        display: block;
     }
-    .card-menu{
-        width: 400px;
-        height: 500px;
+    .text-head{
+        text-align: left;
     }
-    .card-menu img{
-        width: 350px;
-        height: 300px;
-    }
-    .card-menu h1{
-        font-size: 30px;
-    }
-    .price p{
-        font-size: 20px;
-    }
+
 }
 
+.about-us{
+    width: 100%;
+    color: #fff;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-image: linear-gradient(#0000009f,#1b140196),url(media/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 60px;
+    
+
+}
+.about-us h1{
+    margin: 15px;
+}
+.text-about{
+    font-size: 13px;
+    width: 550px;
+    margin: 0 auto;
+
+}
+.profile img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    box-shadow: rgba(116, 116, 116, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.profile h1{
+    font-size: 15px;
+    padding: 5px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile p{
+    padding: 3px;
+    margin-top: 3px;
+    font-size: 13px;
+}
+.profile{
+    width: 250px;
+    height: 350px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: rgba(250, 250, 250, 0.25) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
+    background-image: linear-gradient(#1a19171a,#47340552);
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.profile:hover{
+    transform: translateY(-5px);
+}
+.contact-us{
+    width: 80%;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+.contact-us h1{
+    font-size: 20px;
+    padding: 20px;
+
+}
+.contact-us p{
+    font-size: 15px;
+}
+.card-contact{
+    padding: 25px;
+    box-shadow: rgba(32, 32, 32, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+}
+form label{
+    margin-bottom: 5px;
+}
+form textarea{
+    height: 100px;
+}
+form button{
+    border: none;
+    background-color: #ff6600;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+form button:hover{
+    transform:translateY(-5px)
+}
