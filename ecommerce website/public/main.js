@@ -1,44 +1,9 @@
-// Working Cart
-if(document.readyState == 'loading'){
-    document.addEventListener('DOMContentLoaded',ready)
-}else{
-    ready()
-}
-// Making function
-function ready(){
-    getItems();
-    //remove items from cart
-    var removeCartButtons = document.getElementsByClassName('cart-remove');
-    for (var i = 0; i < removeCartButtons.length; i++)
-    {
-        var button = removeCartButtons[i];
-        button.addEventListener('click', removeCartItem);
-    }
-    // Quantity Changes
-    var quantityInputs = document.getElementsByClassName('cart-quantity')
-    for (var i = 0; i < quantityInputs.length; i++)
-    {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-    }
-    // Add to cart
-    var addCart = document.getElementsByClassName('add-cart')
-    console.log(addCart)
-    for (var j = 0; j < addCart.length; j++)
-    {
-        var button = addCart[i]
-        button.addEventListener('click', addCartClicked)
-    }
-    // Buy Button Work
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
-}
-
 // cart
 let cartIcon = document.querySelector('#cart-icon')
 let cart = document.querySelector('.cart')
 let closeCart = document.querySelector('#close-cart')
-
 // Open Cart
+
 cartIcon.onclick = () =>{
     cart.classList.add("active")
 }
@@ -46,8 +11,6 @@ cartIcon.onclick = () =>{
 closeCart.onclick = () =>{
     cart.classList.remove("active")
 }
-
-
 //items listing
 async function getItems(){
     let url = 'http://localhost:3000/products';
@@ -65,7 +28,7 @@ async function getItems(){
     }
     
 }
-
+getItems();
 async function populateProducts(products) {
     let items = products;
     let html = "";
@@ -76,7 +39,7 @@ async function populateProducts(products) {
             <img src="${item.productImg}" alt="" class="product-img">
             <h2 class="product-title">${item.name}</h2>
             <span class="price">₱${item.price/100}</span>
-            <i class="fa fa-cart-plus add-cart"></i>
+            <i class="fa fa-cart-plus add-cart cart${item.id}"></i>
         </div>
         `;
         console.log(htmlSegment);
@@ -84,6 +47,41 @@ async function populateProducts(products) {
     });
     let container = document.querySelector('.shop-content');
     container.innerHTML = html;
+    // Working Cart
+    if(document.readyState == 'loading'){
+        document.addEventListener('DOMContentLoaded',ready)
+    }else{
+        ready()
+    }
+}
+
+
+// Making function
+function ready(){
+    //remove items from cart
+    var removeCartButtons = document.getElementsByClassName('cart-remove');
+    for (var i = 0; i < removeCartButtons.length; i++)
+    {
+        var button = removeCartButtons[i];
+        button.addEventListener('click', removeCartItem);
+    }
+    // Quantity Changes
+    var quantityInputs = document.getElementsByClassName('cart-quantity')
+    for (var i = 0; i < quantityInputs.length; i++)
+    {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+    // Add to cart
+    var addCart = document.getElementsByClassName('add-cart')
+    console.log(addCart.length)
+    for (var j = 0; j < addCart.length; j++)
+    {
+        var button = addCart[j]
+        button.addEventListener('click', addCartClicked)
+    }
+    // Buy Button Work
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
 }
 
 //buy button clicked
@@ -93,6 +91,7 @@ function buyButtonClicked(){
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild)
     }
+    updatetotal();
 }
 //removeCartButtons
 function removeCartItem(event){
@@ -111,8 +110,10 @@ function quantityChanged(event){
 // add cart clicked
 function addCartClicked(event){
     var button = event.target;
+    console.log(button);
     var shopProducts = button.parentElement;
     var title = shopProducts.getElementsByClassName('product-title')[0].innerHTML;
+    console.log(title);
     var price = shopProducts.getElementsByClassName('price')[0].innerHTML;
     var productImage = shopProducts.getElementsByClassName('product-img')[0].src;
     addProductToCart(title, price, productImage);
@@ -126,7 +127,7 @@ function addProductToCart(title, price, productImage){
     var cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
     for (var i = 0; i < cartItemsNames.length; i++)
     {
-        if(cartItemsNames[i].innerText == title){
+        if(cartItemsNames[i].innerHTML == title){
             alert("You have already add this item to cart");
             return;
         }

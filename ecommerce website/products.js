@@ -25,14 +25,20 @@ exports.productList = [
      },
      {
         id: 5,
-        name: "Hawaiian Pizza",
+        name: "Abra Pizza",
         productImg: "/img/product4.webp",
-        price: 27000
+        price: 37000
      },
      {
         id: 6,
-        name: "Hawaiian Pizza",
+        name: "Capiz Pizza",
         productImg: "/img/product4.webp",
-        price: 27000
+        price: 29000
+     },
+     {
+        id: 7,
+        name: "Lol Pizza",
+        productImg: "/img/product4.webp",
+        price: 29000
      }
 ]
